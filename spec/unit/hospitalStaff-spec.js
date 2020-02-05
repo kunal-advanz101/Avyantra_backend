@@ -224,22 +224,22 @@ describe('Hospital Staff Controlloer', () => {
         spy.andReturn(result)
         HospitalStaffController.getStaffs(req, res, {})
         spy.plan().then((data) => {
-            expect(spy_1.wasCalled).toBe(false)
+            expect(spy_1.wasCalled).toBe(true)
             done()
         })
         HospitalStaffController.getStaffs(req1, res, {})
         spy.plan().then((data) => {
-            expect(spy_1.wasCalled).toBe(false)
+            expect(spy_1.wasCalled).toBe(true)
             done()
         })
         HospitalStaffController.getStaffs(req2, res, {})
         spy.plan().then((data) => {
-            expect(spy_1.wasCalled).toBe(false)
+            expect(spy_1.wasCalled).toBe(true)
             done()
         })
         HospitalStaffController.getStaffs(req4, res, {})
         spy.plan().then((data) => {
-            expect(spy_1.wasCalled).toBe(false)
+            expect(spy_1.wasCalled).toBe(true)
             done()
         })
     })
