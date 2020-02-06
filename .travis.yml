@@ -35,4 +35,5 @@ script:
 after_script:
   - ./cc-test-reporter format-coverage -t lcov ./coverage/lcov.info
   - ./cc-test-reporter upload-coverage
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
