@@ -16,23 +16,23 @@ cache:
     directories:
         - $HOME/.npm
 
-# env:
-#   global:
-#     - CC_TEST_REPORTER_ID=2770352d161fdd7e1530feeff3c71a5d7f0c45550bdad619f24096fdb36e9a25
+env:
+  global:
+    - CC_TEST_REPORTER_ID=411914b0cf94babc27b24068f5a8a5f4147d4f53a5f7434325e2c987639b5925
 
 install:
   - npm install  
   - npm install jasmine-node
 
-# before_script:
-#   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-#   - chmod +x ./cc-test-reporter
-#   - ./cc-test-reporter before-build
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
   - npm run coverage                    
 
-# after_script:
-#   - ./cc-test-reporter format-coverage -t lcov ./coverage/lcov.info
-#   - ./cc-test-reporter upload-coverage
+after_script:
+  - ./cc-test-reporter format-coverage -t lcov ./coverage/lcov.info
+  - ./cc-test-reporter upload-coverage
 
